@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <issue id="RtlHardcode" severity="ignore" />
+    <issue id="StopShip" severity = "error" />
+
+    <issue id="MissingTranslation">
+        <ignore path="src/main/res/values/strings.xml"/>
+    </issue>
+
+    <issue id="NewApi">
+        <ignore path="src/.*/MainActivity.java"/>
+    </issue>
+</lint>

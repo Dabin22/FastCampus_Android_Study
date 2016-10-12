@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="5000"
+    android:fromXDelta="0"
+    android:fromYDelta="0"
+    android:toXDelta="200"
+    android:toYDelta="200"></translate>
+
+    <!--
+        duration : 지속시간
+        fromXDelta, fromYDelta :이동 시작 위치 (0이면 자기 위치)
+        toXDelta, toYDelta : 이동 종료 위치
+     -->

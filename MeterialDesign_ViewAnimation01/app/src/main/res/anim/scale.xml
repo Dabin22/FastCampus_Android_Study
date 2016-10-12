@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="5000"
+    android:fromXScale="1.0"
+    android:fromYScale="1.0"
+    android:toXScale="2.0"
+    android:toYScale="2.0"></scale>
+
+    <!--
+        duration : 지속시간
+        fillAfter : 애니매이션 종료상태를 유지 true.
+        fromXScale, fromYScale : 시작크지 배수
+        toXScale, toYScale : 종료크기 배수
+     -->
