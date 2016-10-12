@@ -38,6 +38,31 @@ public class DataUtil {
             }
         }
     }
+    //DB에서 데이터의 총 개수를 가져오는 함수
+    public static int selectCount(Context context) {
+        BbsData data = new BbsData();
+        int count = 0;
+        SQLiteDatabase db = null;
+        Cursor cursor = null;
+        try {
+            db = openDatabase(context,DB_NAME);
+            String query = "select count(*) from bbs2 ";
+            cursor = db.rawQuery(query,null);
+            if(cursor.moveToNext()){
+                count = cursor.getInt(0);
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                if (db != null) db.close();
+                if (cursor != null) cursor.close();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return count;
+    }
 
     public static BbsData select(Context context, int bbsno) {
         BbsData data = new BbsData();
@@ -72,7 +97,14 @@ public class DataUtil {
         return data;
     }
 
-    public static ArrayList<BbsData> selectAll(Context context) {
+    public static ArrayList<BbsData> selectAll(Context context,int count) {
+
+        String query = "select no,title from bbs2 order by no desc limit " +count ;
+        return selectQuery(context,query);
+    }
+
+    public static ArrayList<BbsData> selectQuery(Context context,String query)
+    {
         ArrayList<BbsData> datas = new ArrayList<>();
         SQLiteDatabase db = null;
         Cursor cursor = null;
@@ -80,7 +112,7 @@ public class DataUtil {
             //1. db 를 연결한다
             db = openDatabase(context,DB_NAME);
             //2. 쿼리를 만든다
-            String query = "select no,title from bbs2";
+
             //3. 쿼리를 실행한다
             cursor = db.rawQuery(query,null);
             //4. 반복문을 통해 값을 datas에 담아준다
@@ -105,7 +137,6 @@ public class DataUtil {
         }
         return datas;
     }
-
     public static void update(Context context, BbsData data) {
         SQLiteDatabase db = null;
         try {
@@ -188,5 +219,17 @@ public class DataUtil {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static ArrayList<BbsData> searchDatas(Context context, String searching) {
+        ArrayList<BbsData> datas = new ArrayList<>();
+        String temp =  "(title like '%"+searching+"%') or " + "(name like '%"+searching+"%') or "+
+                " (contents '%"+searching+"%')";
+        String query = "select * from bbs2 where " + temp;
+
+        datas = selectQuery(context, query);
+
+        return datas;
+
     }
 }
