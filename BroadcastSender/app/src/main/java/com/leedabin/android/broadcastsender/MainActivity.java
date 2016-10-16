@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
     public void sendBroadcast(View v){
         Intent intent = new Intent("com.leedabin.android.MESSAGE");
         //intent.putExtra("msg","hello guys~~~");
-        endBroadcast(intent);s
+        endBroadcast(intent);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

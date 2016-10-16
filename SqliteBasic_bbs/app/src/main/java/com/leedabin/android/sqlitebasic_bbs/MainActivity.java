@@ -1,9 +1,14 @@
 package com.leedabin.android.sqlitebasic_bbs;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -30,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
 
     ListFragment lf; // 목록 프래그먼트
     EditFragment ef; // 쓰기 프래그먼트
+    private static final int REQUEST_CODE =99;
 
     ViewPager pager;
 
@@ -40,15 +46,10 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
         // 파일이 없을때만 db 파일 생성
         if (!file.exists())
             DataUtil.assetToDisk(this, DataUtil.DB_NAME);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //앱 초기화 - DB 생성 등...
-        init();
 
         setContentView(R.layout.activity_main);
+
+
 
         lf = new ListFragment();
         ef = new EditFragment();
@@ -57,6 +58,43 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
         CustomAdapter adapter = new CustomAdapter(getSupportFragmentManager());
 
         pager.setAdapter(adapter);
+
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch(requestCode) {
+            case REQUEST_CODE: // 요청코드가 위의 팝업창에 넘겨준 코드와 같으면
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) { // 권한을 체크하고
+                    // 권한이 있으면 데이터를 생성한다
+                    init();
+                }
+                break;
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    private void checkPermissions() {
+        // 런타임 권한 체크 (디스크읽기권한)
+        if(checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED  ){
+            // 요청할 권한 배열생성
+            String permissionArray[] = { Manifest.permission.READ_EXTERNAL_STORAGE };
+            // 런타임 권한요청을 위한 팝업창 출력
+            requestPermissions( permissionArray , REQUEST_CODE );
+        }else{
+            // 런타임 권한이 이미 있으면 데이터를 세팅한다
+            init();
+        }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //앱 초기화 - DB 생성 등...
+        checkPermissions();
+
+
     }
 
     public final static int ACTION_WRITE = 0;

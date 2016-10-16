@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.leedabin.android.notepad.com.leedabin.android.notepad.domain.NotepadData;
+
 import java.util.ArrayList;
 
 /**
@@ -33,9 +36,10 @@ public class Recycler_adapter extends RecyclerView.Adapter<Recycler_adapter.View
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-        NotepadData data = datas.get(position);
+        final NotepadData data = datas.get(position);
         holder.textTitle.setText(data.title_string);
-        holder.textNo.setText((position + 1) + "");
+        holder.textNo.setText(data.no+"");
+        holder.textDate.setText(data.nDate+"");
 
 
         holder.layout.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +47,6 @@ public class Recycler_adapter extends RecyclerView.Adapter<Recycler_adapter.View
             public void onClick(View view) {
                 mainActivity.keyBoardOff();
                 mainActivity.showItem(datas.get(position).content_string);
-                mainActivity.selectPosition(position);
             }
         });
 
@@ -61,8 +64,7 @@ public class Recycler_adapter extends RecyclerView.Adapter<Recycler_adapter.View
             @Override
             public void onClick(View view) {
                 selectViewholder = holder;
-                mainActivity.selectPosition(position);
-                mainActivity.delete_item();
+                mainActivity.delete_item(data.no);
                 mainActivity.returnMode();
 
             }
@@ -85,6 +87,7 @@ public class Recycler_adapter extends RecyclerView.Adapter<Recycler_adapter.View
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textTitle;
         TextView textNo;
+        TextView textDate;
         RelativeLayout layout;
         ImageButton delete_btn;
 
@@ -93,6 +96,7 @@ public class Recycler_adapter extends RecyclerView.Adapter<Recycler_adapter.View
             super(itemView);
             textTitle = (TextView) itemView.findViewById(R.id.cardTitle);
             textNo = (TextView) itemView.findViewById(R.id.cardNo);
+            textDate = (TextView) itemView.findViewById(R.id.cardDate);
             layout = (RelativeLayout) itemView.findViewById(R.id.item_layout);
             delete_btn = (ImageButton) itemView.findViewById(R.id.delete_btn);
         }

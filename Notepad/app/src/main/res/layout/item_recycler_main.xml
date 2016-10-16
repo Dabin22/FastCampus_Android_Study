@@ -33,7 +33,13 @@
                 android:padding="10dp"
                 android:text="" />
 
-
+            <TextView
+                android:layout_toRightOf="@+id/cardTitle"
+                android:id="@+id/cardDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="" />
 
                 <ImageButton
                     android:layout_alignParentRight="true"

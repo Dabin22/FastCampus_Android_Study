@@ -2,7 +2,6 @@ package com.leedabin.android.notepad;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,6 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.leedabin.android.notepad.com.leedabin.android.notepad.domain.NotepadData;
+
 import java.util.ArrayList;
 /*
     메모 어플로 엑티비티에 버튼 하나로 구성되었다.
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     //리사이클러 어뎁터와 뷰와 그 안에 넣을 데이타 리스트 변수
     private RecyclerView recyclerView;
     private Recycler_adapter rc_adapter;
+
     private ArrayList<NotepadData> datas;
     private NotepadData data;
 
@@ -50,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
     //삭제모드에서 원래 모드로 돌아갈때 쓰이는 돌아가기 버튼
     private FloatingActionButton back_fab;
-    //현재 선택된 메모의 위치
-    private int selected_position;
+
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,11 +69,13 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
         read_tv = (TextView) findViewById(R.id.read_tv);
 
-        datas = new ArrayList<>();
-//        data = new NotepadData();
-//        data.title_string = "";
-//        data.content_string = "";
-//        datas.add(data);
+        dbHelper = new DBHelper(this);
+
+
+
+
+        datas = dbHelper.dbSelectAll();
+
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager manager = new LinearLayoutManager(this);
@@ -102,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                         //수정모드에서누른 버튼인지 입력모드(추가)에서 누른건지 구별
                         //기존의 카드뷰의 포지션번호를 이용해서 수정
                         if(modified){
-                            setModified(selected_position);
+                            setModified();
                         }else{
                             //단순 추가
                             memo_input();
@@ -146,7 +151,8 @@ public class MainActivity extends AppCompatActivity {
 
     //메모를 추가할때 쓰이는 메소드
     public void setAdd(NotepadData data) {
-        datas.add(data);
+        dbHelper.dbInsert(data);
+        datas = dbHelper.dbSelectAll();
         rc_adapter.notifyDataSetChanged();
         editText.setText("");
     }
@@ -177,28 +183,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //변경 모드에서 입력된 내용을 그 위치의 데이터 내용에 덮어 씌우는 메소드
-    public void setModified(int index) {
-
+    public void setModified() {
+        NotepadData data = new NotepadData();
         if (editText.getText().length() < 13) {
-            datas.get(index).title_string = editText.getText().subSequence(0, editText.getText().length()).toString();
+           data.title_string = editText.getText().subSequence(0, editText.getText().length()).toString();
         } else {
-            datas.get(index).title_string = editText.getText().subSequence(0, 13).toString()+"....";
+            data.title_string = editText.getText().subSequence(0, 13).toString()+"....";
         }
-        datas.get(index).content_string = editText.getText().toString();
+        data.content_string = editText.getText().toString();
 
+        dbHelper.dbUpdate(data);
+        datas = dbHelper.dbSelectAll();
         rc_adapter.notifyDataSetChanged();
         modified =false;
     }
 
-    //현재 내가 선택한 위치를 얻는 메소드
-    public void selectPosition(int selectde_position)
-    {
-        this.selected_position = selectde_position;
-    }
+
 
     //데이터 삭제
-    public void delete_item(){
-        datas.remove(selected_position);
+    public void delete_item(int no){
+
+        dbHelper.dbDelete(no);
+        datas = dbHelper.dbSelectAll();
         rc_adapter.notifyDataSetChanged();
     }
 

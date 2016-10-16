@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Name: "
+        android:text="image"
         android:id="@+id/textView4"
         android:layout_below="@+id/textView3"
         android:layout_alignParentLeft="true"
@@ -78,9 +78,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Content"
         android:id="@+id/textView5"
-        android:layout_below="@+id/name_et"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="43dp" />
+        android:layout_marginTop="34dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -91,5 +91,24 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/name_et"
+        android:layout_alignLeft="@+id/name_et"
+        android:layout_alignStart="@+id/name_et"
+        android:layout_alignRight="@+id/name_et"
+        android:layout_alignEnd="@+id/name_et" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IMAGE"
+        android:id="@+id/btnImg"
+        android:layout_below="@+id/textView2"
+        android:layout_toLeftOf="@+id/cancle_btn"
+        android:layout_toStartOf="@+id/cancle_btn" />
 
 </RelativeLayout>

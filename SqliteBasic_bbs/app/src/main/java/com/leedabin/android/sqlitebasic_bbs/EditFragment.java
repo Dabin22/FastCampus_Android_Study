@@ -1,8 +1,13 @@
 package com.leedabin.android.sqlitebasic_bbs;
 
 import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 
 public class EditFragment extends Fragment {
@@ -21,6 +27,8 @@ public class EditFragment extends Fragment {
 
     Button cancel;
     Button save;
+    Button btnImg;
+    ImageView iv;
 
     int bbsno = -1;
 
@@ -54,7 +62,7 @@ public class EditFragment extends Fragment {
         EditFragment fragment = new EditFragment();
         return fragment;
     }
-
+    private static final int REQ_CODE_IMAGE = 99;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +71,20 @@ public class EditFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         View view = inflater.inflate(R.layout.fragment_edit, container, false);
+        iv = (ImageView)view.findViewById(R.id.imageView);
+        btnImg = (Button)view.findViewById(R.id.btnImg);
+
+        btnImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_PICK,
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI); // 이미지를 호출하는 action intent
+                startActivityForResult(intent, REQ_CODE_IMAGE);          // 결과값을 넘겨받기 위해 호출
+            }
+        });
         cancel = (Button) view.findViewById(R.id.cancle_btn);
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +116,27 @@ public class EditFragment extends Fragment {
         contents = (EditText) view.findViewById(R.id.content_et);
 
         return view;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQ_CODE_IMAGE && data != null){
+            Uri mediaImage = data.getData();                        //갤러리 uri
+            String selections[] = {MediaStore.Images.Media.DATA};   //실제 이미지 패스 데이터
+            Cursor cursor = getContext().getContentResolver().query(mediaImage,selections,null,null,null);
+
+
+            if(cursor.moveToNext()){
+                String imagePath =cursor.getString(0);
+                name.setText(imagePath);
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inJustDecodeBounds = true;
+                Bitmap bitmap = BitmapFactory.decodeFile(imagePath,options);
+                iv.setImageBitmap(bitmap);
+
+            }
+        }
     }
 
     @Override
