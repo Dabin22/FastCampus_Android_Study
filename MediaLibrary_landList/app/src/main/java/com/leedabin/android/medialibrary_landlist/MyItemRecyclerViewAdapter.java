@@ -1,10 +1,12 @@
 package com.leedabin.android.medialibrary_landlist;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -29,10 +31,17 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.title_tv.setText(mValues.get(position).title);
         holder.singer_tv.setText(mValues.get(position).singer);
         holder.album_iv.setImageBitmap(mValues.get(position).album_id);
+
+        holder.item_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onListFragmentInteraction(position);
+            }
+        });
 
 
     }
@@ -47,6 +56,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         public final TextView title_tv;
         public final TextView singer_tv;
         public final ImageView album_iv;
+        public final LinearLayout item_layout;
+
 
         public ViewHolder(View view) {
             super(view);
@@ -54,6 +65,9 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
             title_tv = (TextView)view.findViewById(R.id.music_title);
             singer_tv = (TextView)view.findViewById(R.id.singer);
             album_iv = (ImageView)view.findViewById(R.id.image);
+            item_layout = (LinearLayout)view.findViewById(R.id.item_layout);
+
+
         }
 
     }

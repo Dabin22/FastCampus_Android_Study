@@ -34,7 +34,9 @@
                 android:text="" />
 
             <TextView
+                android:layout_toLeftOf="@+id/delete_btn"
                 android:layout_toRightOf="@+id/cardTitle"
+                android:layout_marginLeft="10dp"
                 android:id="@+id/cardDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

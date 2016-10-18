@@ -19,9 +19,7 @@ public class MainActivity extends AppCompatActivity {
     FragmentGallery fragmentG;
     ArrayList<FragmentData> datas;
     int position =0;
-    TextView tv;
     ViewPager pager;
-    BlankFragment fragmentB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

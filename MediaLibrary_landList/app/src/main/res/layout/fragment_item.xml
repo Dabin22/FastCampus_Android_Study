@@ -13,12 +13,13 @@
         app:cardCornerRadius="10dp">
 
         <LinearLayout
+            android:id="@+id/item_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <ImageView
                 android:layout_width="60dp"
-                android:layout_height="60ddp"
+                android:layout_height="60dp"
                 android:id="@+id/image"/>
             <LinearLayout
                 android:layout_marginLeft="10dp"

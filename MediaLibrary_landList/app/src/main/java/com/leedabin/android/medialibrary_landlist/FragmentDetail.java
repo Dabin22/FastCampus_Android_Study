@@ -1,7 +1,9 @@
 package com.leedabin.android.medialibrary_landlist;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
@@ -19,11 +21,12 @@ import java.util.ArrayList;
 public class FragmentDetail extends Fragment {
 
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
+    private OnListFragmentInteractionListener mListener;
     private ArrayList<MusicData> datas;
-    ViewPager pager;
+    private static ViewPager pager;
+    private MusicRecyclerAdapter adapter;
+    private static FragmentDetail fragment = null;
 
 
 
@@ -38,7 +41,8 @@ public class FragmentDetail extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static FragmentDetail newInstance() {
-        FragmentDetail fragment = new FragmentDetail();
+        if(fragment == null)
+            fragment= new FragmentDetail();
         return fragment;
     }
 
@@ -55,25 +59,33 @@ public class FragmentDetail extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fragment_detail, container, false);
         pager = (ViewPager) view.findViewById(R.id.pager);
 
-        Data data = new Data();
-        datas = data.getMusicInfo(getContext());
-        MusicRecyclerAdapter adapter = new MusicRecyclerAdapter(inflater);
+        MediaData mediaData = MediaData.getInstance(getContext());
+        datas = mediaData.getDatas();
+        adapter = new MusicRecyclerAdapter(inflater);
 
         pager.setAdapter(adapter);
+
+
         return view;
     }
-//
-//
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-//    }
+
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnListFragmentInteractionListener) {
+            mListener = (OnListFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    public void setPagerCurrentItem(int position)
+    {
+        Log.i("tag","pager = "+ pager);
+        pager.setCurrentItem(position);
+    }
 
     @Override
     public void onDetach() {
@@ -96,7 +108,6 @@ public class FragmentDetail extends Fragment {
 
     class MusicRecyclerAdapter extends PagerAdapter {
         LayoutInflater inflater;
-
         public MusicRecyclerAdapter(LayoutInflater inflater) {
             this.inflater = inflater;
         }
@@ -118,6 +129,7 @@ public class FragmentDetail extends Fragment {
             image.setImageBitmap(data.album_id);
             // ViewPager를 만든 View에 추가
             container.addView(view);
+
             return view;
         }
 

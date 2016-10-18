@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     private Recycler_adapter rc_adapter;
 
     private ArrayList<NotepadData> datas;
-    private NotepadData data;
 
     //추가와 수정 등에 쓰이는 플러스 버튼과 입력창
     private FloatingActionButton fab;
@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
     //삭제모드에서 원래 모드로 돌아갈때 쓰이는 돌아가기 버튼
     private FloatingActionButton back_fab;
+
+    private int no =-1;
 
     DBHelper dbHelper;
 
@@ -72,10 +74,7 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new DBHelper(this);
 
 
-
-
         datas = dbHelper.dbSelectAll();
-
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager manager = new LinearLayoutManager(this);
@@ -103,26 +102,26 @@ public class MainActivity extends AppCompatActivity {
                     keyBoardOff();
                 } else {
                     //글자 입력시에 작동
-                    if(editText.getText().length() >0){
+                    if (editText.getText().length() > 0) {
                         //수정모드에서누른 버튼인지 입력모드(추가)에서 누른건지 구별
                         //기존의 카드뷰의 포지션번호를 이용해서 수정
-                        if(modified){
+                        if (modified) {
                             setModified();
-                        }else{
+                        } else {
                             //단순 추가
                             memo_input();
                         }
                         keyBoardOff();
                         //처리시 기본화면으로 돌아간다.
-                       list_viewMode();
-                    }else{
-                        Toast.makeText(MainActivity.this,"내용을 입력해 주세요",Toast.LENGTH_SHORT).show();
+                        list_viewMode();
+                    } else {
+                        Toast.makeText(MainActivity.this, "내용을 입력해 주세요", Toast.LENGTH_SHORT).show();
                     }
 
                 }
             }
         });
-        back_fab = (FloatingActionButton)findViewById(R.id.back_fab);
+        back_fab = (FloatingActionButton) findViewById(R.id.back_fab);
         back_fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -141,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         //종료되는것을 방지하고 원하는 xml화면이 Visible 하게 해준다.
         if (content.getVisibility() == View.GONE) {
             list_viewMode();
-            if(back_fab.getVisibility() == View.VISIBLE)
+            if (back_fab.getVisibility() == View.VISIBLE)
                 returnMode();
             editText.setText("");
             keyBoardOff();
@@ -153,14 +152,16 @@ public class MainActivity extends AppCompatActivity {
     public void setAdd(NotepadData data) {
         dbHelper.dbInsert(data);
         datas = dbHelper.dbSelectAll();
+        rc_adapter.setDatas(datas);
         rc_adapter.notifyDataSetChanged();
         editText.setText("");
     }
 
     //메모를 자세히 볼때 쓰이는 메소드
-    public void showItem(String content_fild) {
+    public void showItem(String content_fild,int no) {
         readMode();
         read_tv.setText(content_fild);
+        this.no = no;
     }
 
     //화면에서 사용자 키보드가 안보이게 하는 메소드
@@ -170,12 +171,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //입력된 내용을 notepadData에 담는 함수
-    public void memo_input(){
+    public void memo_input() {
         NotepadData data = new NotepadData();
-        if (editText.getText().length() < 13) {
+        if (editText.getText().length() < 9) {
             data.title_string = editText.getText().subSequence(0, editText.getText().length()).toString();
         } else {
-            data.title_string = editText.getText().subSequence(0, 13).toString()+"....";
+            data.title_string = editText.getText().subSequence(0, 9).toString() + "....";
         }
         data.content_string = editText.getText().toString();
         setAdd(data);
@@ -185,63 +186,72 @@ public class MainActivity extends AppCompatActivity {
     //변경 모드에서 입력된 내용을 그 위치의 데이터 내용에 덮어 씌우는 메소드
     public void setModified() {
         NotepadData data = new NotepadData();
-        if (editText.getText().length() < 13) {
-           data.title_string = editText.getText().subSequence(0, editText.getText().length()).toString();
+        if (editText.getText().length() < 9) {
+            data.title_string = editText.getText().subSequence(0, editText.getText().length()).toString();
         } else {
-            data.title_string = editText.getText().subSequence(0, 13).toString()+"....";
+            data.title_string = editText.getText().subSequence(0, 9).toString() + "....";
         }
         data.content_string = editText.getText().toString();
 
+        if(no != -1) {
+            data.no = no;
+            no = -1;
+        }
         dbHelper.dbUpdate(data);
         datas = dbHelper.dbSelectAll();
+        rc_adapter.setDatas(datas);
         rc_adapter.notifyDataSetChanged();
-        modified =false;
+        modified = false;
     }
 
 
-
     //데이터 삭제
-    public void delete_item(int no){
+    public void delete_item(int no) {
 
         dbHelper.dbDelete(no);
         datas = dbHelper.dbSelectAll();
+        rc_adapter.setDatas(datas);
         rc_adapter.notifyDataSetChanged();
     }
 
     //메인화면 활성화
-    public void list_viewMode(){
+    public void list_viewMode() {
         content.setVisibility(View.VISIBLE);
         fab.setVisibility(View.VISIBLE);
         input.setVisibility(View.GONE);
         read.setVisibility(View.GONE);
     }
+
     //입력화면 활성화
-    public void inputMode(){
+    public void inputMode() {
         content.setVisibility(View.GONE);
         input.setVisibility(View.VISIBLE);
     }
 
     //메모 자세히 보는 화면 활성화
-    public void readMode(){
+    public void readMode() {
         content.setVisibility(View.GONE);
         read.setVisibility(View.VISIBLE);
         fab.setVisibility(View.GONE);
     }
+
     //메모 변경화면 활성화
-    public void modifiedMode(){
+    public void modifiedMode() {
         read.setVisibility(View.GONE);
         content.setVisibility(View.GONE);
         input.setVisibility(View.VISIBLE);
         fab.setVisibility(View.VISIBLE);
         modified = true;
     }
+
     //삭제화면 활성화
-    public void deleteMode(){
+    public void deleteMode() {
         fab.setVisibility(View.GONE);
         back_fab.setVisibility(View.VISIBLE);
     }
+
     //삭제 화면 활성화후 다시 원래 화면으로 돌아가는 메소드
-    public void returnMode(){
+    public void returnMode() {
         Recycler_adapter.ViewHolder vh = rc_adapter.selectedViewHolder();
         back_fab.setVisibility(View.GONE);
         fab.setVisibility(View.VISIBLE);

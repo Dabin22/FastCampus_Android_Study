@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.leedabin.android.notepad.com.leedabin.android.notepad.domain.NotepadData;
 
@@ -42,11 +43,12 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         //2. select 쿼리 작성
         String query = "select * from memo";
-        NotepadData data = new NotepadData();
+
         //3. 쿼리를 실행해서 cusor에 담고
         Cursor cursor = db.rawQuery(query,null);
         //4. 커서에 담기 데이터를 while문을 돌면서 꺼내고
         while(cursor.moveToNext()) {
+            NotepadData data = new NotepadData();
             //5.1 데이터 단위로 cursor에서 꺼내와서 담아준다
             int idx = cursor.getColumnIndex("no");
             data.no = cursor.getInt(idx);
@@ -56,6 +58,8 @@ public class DBHelper extends SQLiteOpenHelper {
             data.content_string = cursor.getString(idx);
             idx = cursor.getColumnIndex("ndate");
             data.nDate = cursor.getLong(idx);
+
+            Log.i("tag","no = " + data.no);
             //5.2 data.add(메모 데이터)
             datas.add(data);
         }

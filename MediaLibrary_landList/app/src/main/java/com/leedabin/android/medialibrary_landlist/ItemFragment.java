@@ -22,10 +22,7 @@ import java.util.ArrayList;
 
 public class ItemFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
-    private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
-    private int mColumnCount = 1;
+
     private Context context;
     private OnListFragmentInteractionListener mListener;
     ArrayList<MusicData> datas;
@@ -49,9 +46,6 @@ public class ItemFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getArguments() != null) {
-            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
-        }
     }
 
     @Override
@@ -61,16 +55,18 @@ public class ItemFragment extends Fragment {
 
         // Set the adapter
         if (view instanceof RecyclerView) {
-            context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
+            context = getContext();
+            final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.list);
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            Data data = new Data();
-            datas = data.getMusicInfo(context);
+            MediaData mediaData = MediaData.getInstance(getContext());
+            datas = mediaData.getDatas();
             recyclerView.setAdapter(new MyItemRecyclerViewAdapter(datas, mListener));
+
+
         }
+
         return view;
     }
-
 
 
     @Override
@@ -101,8 +97,4 @@ public class ItemFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
 
-}
-interface OnListFragmentInteractionListener {
-    // TODO: Update argument type and name
-    void onListFragmentInteraction();
 }

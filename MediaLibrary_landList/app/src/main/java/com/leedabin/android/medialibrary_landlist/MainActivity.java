@@ -7,6 +7,7 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 
 import java.util.ArrayList;
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements OnListFragmentInt
 
 
     @Override
-    public void onListFragmentInteraction() {
+    public void onListFragmentInteraction(int position) {
+            fragmentDetail.setPagerCurrentItem(position);
     }
 }
