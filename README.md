@@ -128,3 +128,10 @@
 ## 41. ThreadBasic_AsyncTask 2016.10.18
  > 위의 프로젝트에서 progressDialog를 dismiss()와 quit()가 시간이 서로 맞지않아 앱이 죽어버려 화면이 멈추는 문제가 발생하였다.
   그 문제를 해결하기 위해 AsyncTask를 사용해보는 예제입니다.
+
+## 42. Customize_Component 2016.10.20
+ > drawable 폴더에 xml파일을 만들어서 버튼을 커스텀 마이징 해보왔고 Text뷰를 상속받아서 커스텀 뷰를 만들어 오늘 
+   날짜에 "-"를 구분자로 입력받아본 프로젝트입니다.
+
+## 43. SurfaceView 2016.10.20
+ > surfaceview를 사용하여서 화면을 구성해보았고 조그마한 네모가 화면을 가로질러 움직이는 프로젝트입니다.

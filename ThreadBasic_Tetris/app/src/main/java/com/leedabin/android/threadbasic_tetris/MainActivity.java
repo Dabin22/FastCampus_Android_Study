@@ -5,41 +5,48 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.view.Display;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-import java.util.Random;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     FrameLayout tetris_ground;
     FrameLayout tetris_privew;
-    private static final int M_ABS_X =5;
-    private static final int M_ABS_Y =0;
-    private static final int P_ABS_X =5;
-    private static final int P_ABS_Y =0;
-    int x_main = 0;
-    int y_main = 0;
-    int stageLevel = 1;
+
 
     int ground_width_pixel;
     int ground_height_pixel;
-    final static int  MWIDTH_MAX_COUNT = 16;
+
+    int preview_width_pixel;
+    int preview_height_pixel;
+    final static int MWIDTH_MAX_COUNT = 16;
+    final static int PWIDTH_MAX_COUNT = 6;
 
 
-    int block_pixel_unit =0;
+    Block blockGroup = null;
+    int mBlock_pixel_unit = 0;
+    int pBlock_pixel_unit = 0;
 
 
-    int currentBlock[][];
-
-    Stage stage = new Stage();
-    Handler handler = new Handler(){
+    Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            switch (msg.what){
-                case Stage.REFRESH:
-                    //화면 갱신을 Stage에 요청한다.
+            switch (msg.what) {
+                case MainStage.REFRESH:
+                    //화면 갱신을 Stage에 요청한다.a
+                    mainStage.invalidate();
+                    break;
+                case MainStage.NEWBLOCK:
+                    mainStage.setNextBlock(blockGroup);
+                    mainStage.invalidate();
+                    blockGroup = previewStage.newBlock();
+                    previewStage.invalidate();
+                    break;
+                case PreviewStage.NEXTBLOCK:
+                    blockGroup = previewStage.newBlock();
+                    previewStage.invalidate();
                     break;
             }
         }
@@ -57,29 +64,74 @@ public class MainActivity extends AppCompatActivity {
         tetris_ground = (FrameLayout) findViewById(R.id.tetrisGround);
         tetris_privew = (FrameLayout) findViewById(R.id.preview);
         btn_up = (Button) findViewById(R.id.btn_up);
-        btn_down = (Button) findViewById(R.id.btn_up);
-        btn_left = (Button) findViewById(R.id.btn_up);
-        btn_right = (Button) findViewById(R.id.btn_up);
+        btn_down = (Button) findViewById(R.id.btn_down);
+        btn_left = (Button) findViewById(R.id.btn_left);
+        btn_right = (Button) findViewById(R.id.btn_right);
         btn_start = (Button) findViewById(R.id.btn_start);
         btn_pause = (Button) findViewById(R.id.btn_pause);
+        btn_up.setOnClickListener(this);
+        btn_down.setOnClickListener(this);
+        btn_left.setOnClickListener(this);
+        btn_right.setOnClickListener(this);
+        btn_start.setOnClickListener(this);
+        previewStage.running = true;
 
-
-        DisplayMetrics metrics = getResources().getDisplayMetrics();
-        ground_width_pixel = metrics.widthPixels-(int)tetris_privew.getX();
-
-        // stageMap 배열에 Stage 객체에 정의된 배열값을 세팅한다.
-        setStage(1);
-        //뷰 객체를 생성한다.
 
     }
 
-    public void setStage(int stageLevel) {
-      stage.setLevel(stageLevel);
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
 
-        //최초의 세팅되는 블럭의 위치
-        x_main = M_ABS_X;
-        y_main = M_ABS_Y;
+        if (hasFocus) {
+            DisplayMetrics metrics = getResources().getDisplayMetrics();
+            ground_width_pixel = metrics.widthPixels - (int) tetris_privew.getWidth();
+            ground_height_pixel = metrics.heightPixels;
+            preview_width_pixel = tetris_privew.getWidth();
+            preview_height_pixel = tetris_privew.getHeight();
+
+
+            mBlock_pixel_unit = ground_width_pixel / MWIDTH_MAX_COUNT;
+            pBlock_pixel_unit = preview_width_pixel / PWIDTH_MAX_COUNT;
+            Log.i("tag", "preview.running =" + previewStage.running);
+            previewStage = new PreviewStage(this,handler,pBlock_pixel_unit);
+            mainStage = new MainStage(this,handler,mBlock_pixel_unit);
+            tetris_ground.addView(mainStage);
+            tetris_privew.addView(previewStage);
+        }
+
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_up:
+                if (blockGroup != null)
+                    mainStage.rotateBlock();
+                break;
+            case R.id.btn_down:
+                if (blockGroup != null)
+                    mainStage.downBlock();
+                break;
+            case R.id.btn_left:
+                if (blockGroup != null)
+                    mainStage.leftBlock();
+                break;
+            case R.id.btn_right:
+                if (blockGroup != null)
+                    mainStage.rightBlock();
+                break;
+            case R.id.btn_start:
+                blockGroup = previewStage.newBlock();
+                previewStage.notFirst++;
+                mainStage.setFirstBlock(blockGroup);
+                mainStage.invalidate();
+                break;
+        }
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        previewStage.running = false;
+    }
 }
