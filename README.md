@@ -135,3 +135,6 @@
 
 ## 43. SurfaceView 2016.10.20
  > surfaceview를 사용하여서 화면을 구성해보았고 조그마한 네모가 화면을 가로질러 움직이는 프로젝트입니다.
+
+## 44. Remote_HttpURLConnection 2016.10.21
+ > httpurlconnection을 사용하여 서울시 API와 통신해보며 JSON에서 필요한 정보만 가져오는 프로젝트입니다.
