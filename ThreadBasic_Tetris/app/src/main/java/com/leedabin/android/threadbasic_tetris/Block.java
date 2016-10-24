@@ -48,13 +48,12 @@ public class Block extends Thread {
     }
 
 
-
-
     //생성되고 화면에 세팅되면
     public void run() {
         while (alive) {
             try {
                 Thread.sleep(interval);
+
                 if (alive) {
                     y++;
                     if (!collisionCheck()) {
@@ -63,16 +62,19 @@ public class Block extends Thread {
                         y--;
                         setBlockIntoStage();
                     }
-                }else {
-                    Log.i("tag","이러면 죽은 건데 alive = false");
+                } else {
+                    Log.i("tag", "이러면 죽은 건데 alive = false");
                 }
+
             } catch (Exception e) {
 
             }
         }
-        try{
+        try {
             interrupt();
-        }catch (Exception e){ e.printStackTrace(); }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void setBlockIntoStage() {
@@ -104,9 +106,20 @@ public class Block extends Thread {
                 // 각로우의 셀에 0이 한개도 없으면
                 if (zeroCount == 0) {
                     // 해당줄을 지운다
+                    int temp = 0;
                     for (int k = 1; k < row.length - 1; k++) {
                         MainStage.map[i][k] = 0;
                     }
+                    //위의 줄을 아래로 내린다.
+                    for (int j = i; j > 0; j--) {
+                        for (int k = 1; k < row.length - 1; k++) {
+                            temp = MainStage.map[j-1][k];
+                            MainStage.map[j-1][k]=0;
+                            MainStage.map[j][k] = temp;
+                        }
+                    }
+                    handler.sendEmptyMessage(MainActivity.SCORE_UP);
+
                 }
             }
         }

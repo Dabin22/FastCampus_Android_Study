@@ -23,7 +23,6 @@ public class Reomote {
         //아래 한줄로 webUrl 주소에 해당하는 서버와 연결이 된 상태가 된다.
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         //REST API =GET(조회), POST(입력), (DELETE, PUT(수정) -> 이두분이 지원하지 않는 서버가 있음)
-
         connection.setRequestMethod("GET");
         int responseCode = connection.getResponseCode();
         if (responseCode == HttpURLConnection.HTTP_OK) {

@@ -9,12 +9,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     FrameLayout tetris_ground;
     FrameLayout tetris_privew;
 
+    public static final int SCORE_UP = 10;
 
     int ground_width_pixel;
     int ground_height_pixel;
@@ -25,10 +27,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     final static int PWIDTH_MAX_COUNT = 6;
 
 
+    public int score =0;
+
     Block blockGroup = null;
     int mBlock_pixel_unit = 0;
     int pBlock_pixel_unit = 0;
 
+    TextView tv_score;
 
     Handler handler = new Handler() {
         @Override
@@ -48,9 +53,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     blockGroup = previewStage.newBlock();
                     previewStage.invalidate();
                     break;
+                case MainActivity.SCORE_UP:
+                    score +=100;
+                    tv_score.setText(score+"");
+                    break;
             }
         }
     };
+
 
     MainStage mainStage;
     PreviewStage previewStage;
@@ -75,7 +85,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_right.setOnClickListener(this);
         btn_start.setOnClickListener(this);
         previewStage.running = true;
-
+        tv_score = (TextView)findViewById(R.id.score_tv);
+        tv_score.setText(score+"");
 
     }
 
@@ -129,9 +140,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    public void setScore(int score){
+        this.score += score;
+        tv_score.setText(score);
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();
         previewStage.running = false;
     }
+
 }
