@@ -18,7 +18,7 @@ public class PreviewStage extends View {
     Paint paint[] = new Paint[10];
     int notFirst = 0;
 
-    public static boolean running = true;
+
     int map[][];
     Stage stage;
     Handler mainHandler;
@@ -26,15 +26,15 @@ public class PreviewStage extends View {
     final int stageWidth = 6;
     final int stageHeight = 6;
     Block currentBlockGroup = null;
-    private PreviewStage previewStage;
+
+    boolean clear = false;
 
     public Block newBlock() {
-        if (running) {
-            currentBlockGroup = BlockFactory.newBlcok(mainHandler);
-        }
+
+        currentBlockGroup = BlockFactory.newBlcok(mainHandler);
+
         return currentBlockGroup;
     }
-
 
 
     public PreviewStage(Context context, Handler handler, int block_pixel_unit) {
@@ -76,18 +76,34 @@ public class PreviewStage extends View {
 
             }
         }
-        if (currentBlockGroup != null && notFirst>0) {
+        if (currentBlockGroup != null && notFirst > 0) {
             int cBlock[][] = currentBlockGroup.getBlock();
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
                     if (cBlock[j][i] > 0) {
                         canvas.drawRect(
-                                i * unit - 1
-                                , j * unit - 1
-                                , i * unit + unit - 1
-                                , j * unit + unit - 1
+                                (i+1) * unit
+                                , (j+1) * unit
+                                , (i+1) * unit + unit - 2
+                                ,(j+1)* unit + unit - 2
                                 , paint[cBlock[j][i]]
                         );
+                    }
+                }
+            }
+
+            if(clear){
+                for (int i = 0; i < 4; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        if (cBlock[j][i] > 0) {
+                            canvas.drawRect(
+                                    (i+1) * unit
+                                    , (j+1) * unit
+                                    , (i+1) * unit + unit - 2
+                                    ,(j+1)* unit + unit - 2
+                                    , paint[0]
+                            );
+                        }
                     }
                 }
             }

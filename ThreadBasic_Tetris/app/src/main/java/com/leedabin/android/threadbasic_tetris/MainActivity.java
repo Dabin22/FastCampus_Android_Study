@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MainStage.REFRESH:
-                    //화면 갱신을 Stage에 요청한다.a
+                    //화면 갱신을 Stage에 요청한다.
                     mainStage.invalidate();
                     break;
                 case MainStage.NEWBLOCK:
@@ -57,6 +57,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     score +=100;
                     tv_score.setText(score+"");
                     break;
+                case MainStage.PREVIEW_CLEAR:
+                    previewStage.clear = true;
+                    previewStage.invalidate();
+                    break;
             }
         }
     };
@@ -64,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     MainStage mainStage;
     PreviewStage previewStage;
-    Button btn_up, btn_down, btn_left, btn_right, btn_start, btn_pause;
+    Button btn_up, btn_down, btn_left, btn_right, btn_start, btn_end;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,13 +82,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_left = (Button) findViewById(R.id.btn_left);
         btn_right = (Button) findViewById(R.id.btn_right);
         btn_start = (Button) findViewById(R.id.btn_start);
-        btn_pause = (Button) findViewById(R.id.btn_pause);
+        btn_end = (Button) findViewById(R.id.btn_end);
         btn_up.setOnClickListener(this);
         btn_down.setOnClickListener(this);
         btn_left.setOnClickListener(this);
         btn_right.setOnClickListener(this);
         btn_start.setOnClickListener(this);
-        previewStage.running = true;
+        btn_end.setOnClickListener(this);
+
         tv_score = (TextView)findViewById(R.id.score_tv);
         tv_score.setText(score+"");
 
@@ -103,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             mBlock_pixel_unit = ground_width_pixel / MWIDTH_MAX_COUNT;
             pBlock_pixel_unit = preview_width_pixel / PWIDTH_MAX_COUNT;
-            Log.i("tag", "preview.running =" + previewStage.running);
+
             previewStage = new PreviewStage(this,handler,pBlock_pixel_unit);
             mainStage = new MainStage(this,handler,mBlock_pixel_unit);
             tetris_ground.addView(mainStage);
@@ -132,22 +137,57 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mainStage.rightBlock();
                 break;
             case R.id.btn_start:
-                blockGroup = previewStage.newBlock();
-                previewStage.notFirst++;
-                mainStage.setFirstBlock(blockGroup);
-                mainStage.invalidate();
+                if(!mainStage.running) {
+                    previewStage.clear = false;
+                    blockGroup = previewStage.newBlock();
+                    previewStage.notFirst++;
+                    mainStage.running = true;
+                    mainStage.setFirstBlock(blockGroup);
+                    mainStage.invalidate();
+                }
+                break;
+            case R.id.btn_end:
+                Log.i("tag","btn end click");
+                setGame();
                 break;
         }
     }
 
-    public void setScore(int score){
-        this.score += score;
-        tv_score.setText(score);
+    public void setGame(){
+        mainStage.currentBlockDied();
+        mainStage.running = false;
+        mainStage.invalidate();
+        score = 0;
+        tv_score.setText("");
     }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i("tag","onRestart Mode");
+        if(blockGroup != null) {
+            blockGroup.pause = false;
+            mainStage.invalidate();
+            previewStage.invalidate();
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("tag","OnStop mode");
+        if(blockGroup != null) {
+            blockGroup.pause = true;
+            mainStage.invalidate();
+            previewStage.invalidate();
+        }
+    }
+
     @Override
     protected void onDestroy() {
+        Log.i("tag","onDestroy mode");
+        setGame();
         super.onDestroy();
-        previewStage.running = false;
     }
 
 }

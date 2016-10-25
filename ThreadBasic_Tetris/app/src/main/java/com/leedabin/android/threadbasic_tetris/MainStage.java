@@ -15,19 +15,20 @@ import android.view.View;
 public class MainStage extends View {
     public static final int REFRESH = 0;
     public static final int NEWBLOCK = 1;
+    public static final int PREVIEW_CLEAR = 6;
 
 
     Paint paint[] = new Paint[10];
     public static int interval = 1000;
-    MainStage mainStage;
     static int map[][];
     Stage stage;
     Handler mainHandler;
     int unit = 0;
     final int stageWidth = 14;
-    final int stageHeight = 21;
+    final int stageHeight = 22;
     final int stageTop = 1;
     final int stageLeft = 1;
+    public boolean running = false;
 
 
     int width = 4;
@@ -38,21 +39,30 @@ public class MainStage extends View {
 
     public void setFirstBlock(Block newBlockGroup) {
         //생성자에서 호출된다.
-            Log.i("tag", count + "번째 블럭");
-            currentBlockGroup = newBlockGroup;
-            currentBlockGroup.start();
-            mainHandler.sendEmptyMessage(PreviewStage.NEXTBLOCK);
-            count++;
+        Log.i("tag", count + "번째 블럭");
+        currentBlockGroup = newBlockGroup;
+        currentBlockGroup.start();
+        mainHandler.sendEmptyMessage(PreviewStage.NEXTBLOCK);
+        count++;
     }
 
-    public void setNextBlock(Block newBlockGroup)
-    {
-        if(PreviewStage.running) {
+    public void setNextBlock(Block newBlockGroup) {
+        if (running) {
             currentBlockGroup = newBlockGroup;
             currentBlockGroup.start();
+        } else {
+
         }
+
     }
 
+    public void currentBlockDied(){
+        stage = new Stage();
+        stage.setLevel(1);
+        setStageMap(stage.currentMap());
+        if(currentBlockGroup != null)
+            currentBlockGroup.alive = false;
+    }
 
 
     public MainStage(Context context, Handler handler, int block_pixel_unit) {
@@ -70,6 +80,7 @@ public class MainStage extends View {
         paint[5].setColor(ContextCompat.getColor(context, R.color.block4));
         paint[6].setColor(ContextCompat.getColor(context, R.color.block6));
         paint[7].setColor(ContextCompat.getColor(context, R.color.block7));
+        paint[8].setColor(Color.WHITE);
         paint[9].setColor(ContextCompat.getColor(context, R.color.border));
         stage = new Stage();
         stage.setLevel(1);
@@ -89,8 +100,8 @@ public class MainStage extends View {
                 canvas.drawRect(
                         (stageLeft + i) * unit
                         , (stageTop + j) * unit
-                        , (stageLeft + i) * unit + unit
-                        , (stageTop + j) * unit + unit
+                        , (stageLeft + i) * unit + unit - 2
+                        , (stageTop + j) * unit + unit - 2
                         , paint[map[j][i]]
                 );
             }
@@ -104,16 +115,35 @@ public class MainStage extends View {
                 for (int j = 0; j < height; j++) {
                     if (cBlock[j][i] > 0) {
                         canvas.drawRect(
-                                (stageLeft + i + currentBlockGroup.x) * unit - 1
-                                , (stageTop + j + currentBlockGroup.y) * unit - 1
-                                , (stageLeft + i + currentBlockGroup.x) * unit + unit - 1
-                                , (stageTop + j + currentBlockGroup.y) * unit + unit - 1
+                                (stageLeft + i + currentBlockGroup.x) * unit
+                                , (stageTop + j + currentBlockGroup.y) * unit
+                                , (stageLeft + i + currentBlockGroup.x) * unit + unit - 2
+                                , (stageTop + j + currentBlockGroup.y) * unit + unit - 2
                                 , paint[cBlock[j][i]]
                         );
                     }
                 }
             }
+
+            //게임 종료시 현재 블록 삭제
+            if (!running) {
+                mainHandler.sendEmptyMessage(PREVIEW_CLEAR);
+                for (int i = 0; i < width; i++) {
+                    for (int j = 0; j < height; j++) {
+                        if (cBlock[j][i] > 0) {
+                            canvas.drawRect(
+                                    (stageLeft + i + currentBlockGroup.x) * unit
+                                    , (stageTop + j + currentBlockGroup.y) * unit
+                                    , (stageLeft + i + currentBlockGroup.x) * unit + unit - 2
+                                    , (stageTop + j + currentBlockGroup.y) * unit + unit - 2
+                                    , paint[0]
+                            );
+                        }
+                    }
+                }
+            }
         }
+
 
     }
 
@@ -137,13 +167,14 @@ public class MainStage extends View {
 
     public void downBlock() {
 
-        Log.i("tag", "down!");
-        currentBlockGroup.y++;
-        if (!currentBlockGroup.collisionCheck()) {
-            invalidate();
-        } else {
-            currentBlockGroup.y--;
-            currentBlockGroup.setBlockIntoStage();
+        if (currentBlockGroup != null) {
+            currentBlockGroup.y++;
+            if (!currentBlockGroup.collisionCheck()) {
+                invalidate();
+            } else {
+                currentBlockGroup.y--;
+                currentBlockGroup.setBlockIntoStage();
+            }
         }
     }
 

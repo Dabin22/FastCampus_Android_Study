@@ -18,6 +18,7 @@ public class Block extends Thread {
     int block[][];
     static final int ORIENTATION_LIMIT = 4;
     boolean alive = true;
+    boolean pause = false;
     Handler handler;
     private int width = 4;
     private int height = 4;
@@ -54,18 +55,27 @@ public class Block extends Thread {
             try {
                 Thread.sleep(interval);
 
-                if (alive) {
-                    y++;
-                    if (!collisionCheck()) {
+                if (!pause) {
+                    if (alive) {
+
                         handler.sendEmptyMessage(MainStage.REFRESH);
+                        y++;
+
+                        if (!collisionCheck() && alive) {
+                            handler.sendEmptyMessage(MainStage.REFRESH);
+                        } else {
+                            if (alive) {
+                                y--;
+                                setBlockIntoStage();
+                            }
+                        }
                     } else {
-                        y--;
-                        setBlockIntoStage();
+                        Log.i("tag", "이러면 죽은 건데 alive = false");
                     }
                 } else {
-                    Log.i("tag", "이러면 죽은 건데 alive = false");
-                }
+                    Log.i("tag", "alive but pause mode!");
 
+                }
             } catch (Exception e) {
 
             }
@@ -93,7 +103,7 @@ public class Block extends Thread {
         // 블럭을 스테이지에 입력한 후에 해당 블럭범위에 있는 스테이지 가로줄이 꽉찼으면 지워준다
         for (int i = y; i < y + 4; i++) {
             // 전체 스테이지 height값보다 작을때만
-            if (i < 20) {
+            if (i < 21) {
                 // 스테이지 맵에서 한줄식 꺼낸다
                 int row[] = MainStage.map[i];
                 int zeroCount = 0;
@@ -113,8 +123,12 @@ public class Block extends Thread {
                     //위의 줄을 아래로 내린다.
                     for (int j = i; j > 0; j--) {
                         for (int k = 1; k < row.length - 1; k++) {
-                            temp = MainStage.map[j-1][k];
-                            MainStage.map[j-1][k]=0;
+                            temp = MainStage.map[j - 1][k];
+                            if (j == 1) {
+                                MainStage.map[j - 1][k] = 8;
+                            } else {
+                                MainStage.map[j - 1][k] = 0;
+                            }
                             MainStage.map[j][k] = temp;
                         }
                     }
