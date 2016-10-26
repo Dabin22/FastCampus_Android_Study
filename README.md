@@ -149,3 +149,14 @@
  > 노트북에 서버를 띄우고 그곳에 포스트로 값을 넘기고 쿠키에 저장해놓은것을
    쿠키 매니저를 통해서 값을 정제하고 SharedPreferences로 저장을 해서 앱종료 후 다시켜도 그 값이 저장되어있음을 
    보여주는 앱입니다. 
+## 47. Remote_Retrofit 2016.10.26
+ > Retrofit과 gson을 이용해서 open api에서 보내는 json을 효율적으로 분류 해내는 프로젝트입니다.
+
+## 48. Remote_OKHttp 2016.10.26
+ > OKHttp를 통해서 통신해보는 프로젝트입니다.
+
+## 49. Remote_RetrofitWithOKHttp 2016.10.26
+ > Retrofit에 client로 OKHttp를 이용함으로써 인증서 문제나 쿠키매니저등을 사용할 수 있는 프로젝트입니다.
+
+## 50. LoadingLibrary 2016.10.26 
+ > 이미지파일 등 로딩문제를 간편하고 빠르게 해결하기위한 라이브러리인 glide와 picasso를 써본 프로젝트입니다.
