@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     Uri sArtworkUri = Uri.parse("content://media/external/audio/albumart");
 
                     Uri sAlbumArtUri = ContentUris.withAppendedId(sArtworkUri, album_id_idx);
+                    data.uri = sAlbumArtUri;
 
 
                     ParcelFileDescriptor fd = this.getContentResolver().openFileDescriptor(sAlbumArtUri, "r");

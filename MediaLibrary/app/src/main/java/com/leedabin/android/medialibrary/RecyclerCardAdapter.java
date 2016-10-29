@@ -1,6 +1,8 @@
 package com.leedabin.android.medialibrary;
 
+import android.content.ContentUris;
 import android.content.Context;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,7 +11,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
+
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 /**
  * Created by Dabin on 2016-10-04.
@@ -38,11 +44,12 @@ public class RecyclerCardAdapter extends RecyclerView.Adapter<RecyclerCardAdapte
     public void onBindViewHolder(ViewHolder holder, int position) {
         RecyclerData data = datas.get(position);
 
+
         Log.i("Tag","datas.album_id = "+data.album_id +", datas.music_id = " +data.music_id);
         holder.title.setText(data.title);
         holder.singer.setText(data.singer);
         if(data.album_id != null)
-            holder.image.setImageBitmap(data.album_id);
+            Glide.with(context).load(data.uri).bitmapTransform(new CropCircleTransformation(context)).into(holder.image);
         else
             holder.image.setImageResource(R.mipmap.ic_launcher);
 

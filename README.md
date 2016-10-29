@@ -160,3 +160,12 @@
 
 ## 50. LoadingLibrary 2016.10.26 
  > 이미지파일 등 로딩문제를 간편하고 빠르게 해결하기위한 라이브러리인 glide와 picasso를 써본 프로젝트입니다.
+
+## 51. ButterKnife 2016.10.27
+ > ButterKnife를 써본 프로젝트입니다.
+
+## 52. AnnotaitonTest 2016.10.27
+ > annotation을 활용해서 ButterKnife 일부를 구현해 보았습니다.
+
+## 53. Firebase_Database 2016.10.27
+ > 구글의 파이어베이스의 실시간 데이터베이스를 써본 프로젝트입니다.

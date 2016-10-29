@@ -17,6 +17,8 @@ import com.bumptech.glide.request.target.Target;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
+
 public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
@@ -33,40 +35,55 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
+
                 String url = "https://pics.onsizzle.com/575384375459758080-Twitter.png";
-                //Glide 방식
-//                Glide.with(MainActivity.this)
-//                        .load(url)
-//                        .listener(new RequestListener<String, GlideDrawable>() {
-//                            @Override
-//                            public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
-//                                progressBar.setVisibility(View.GONE);
-//                                return false;
-//                            }
-//
-//                            @Override
-//                            public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
-//                                progressBar.setVisibility(View.GONE);
-//                                return false;
-//                            }
-//                        })
-//                        .into(imageView);
-                //picasso 방식
-                Picasso.with(MainActivity.this)
-                        .load(url)
-                        .into(imageView, new Callback() {
-                            @Override
-                            public void onSuccess() {
-                                progressBar.setVisibility(View.GONE);
-                            }
 
-                            @Override
-                            public void onError() {
-
-                            }
-                        });
+                //glide
+                doGlide(url);
+                //picasso
+                //doPicasso(url);
             }
         });
+
     }
+
+    private void doGlide(String url) {
+        progressBar.setVisibility(View.VISIBLE);
+        Glide.with(MainActivity.this)
+                .load(url)
+                .bitmapTransform(new CropCircleTransformation(this))
+                .listener(new RequestListener<String, GlideDrawable>() {
+                    @Override
+                    public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                        progressBar.setVisibility(View.GONE);
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                        progressBar.setVisibility(View.GONE);
+                        return false;
+                    }
+                })
+                .into(imageView);
+    }
+
+    private void doPicasso(String url) {
+        progressBar.setVisibility(View.VISIBLE);
+        Picasso.with(MainActivity.this)
+                .load(url)
+                .into(imageView, new Callback() {
+                    @Override
+                    public void onSuccess() {
+                        progressBar.setVisibility(View.GONE);
+                    }
+
+                    @Override
+                    public void onError() {
+
+                    }
+                });
+    }
+
 }
+
