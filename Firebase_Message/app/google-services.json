@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "502511321513",
+    "firebase_url": "https://fckorea-cb0e0.firebaseio.com",
+    "project_id": "fckorea-cb0e0",
+    "storage_bucket": "fckorea-cb0e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502511321513:android:b17394a43dbb97e1",
+        "android_client_info": {
+          "package_name": "com.example.dabin.firebase_database"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502511321513-3vjslt2mef7c07649e4lfov8cgdfh6gd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAETVaMD9caFT3iIxrV9Ire72yZ5_ZDTwU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502511321513:android:7995a150fd9ccc8f",
+        "android_client_info": {
+          "package_name": "com.example.dabin.firebase_message"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502511321513-3vjslt2mef7c07649e4lfov8cgdfh6gd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAETVaMD9caFT3iIxrV9Ire72yZ5_ZDTwU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,9 +1,7 @@
 package com.example.dabin.firebase_database;
 
-import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,11 +21,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference rootRef;
+    DatabaseReference userRef;
+
 
     EditText et_name;
     EditText et_email;
@@ -40,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     ArrayList<Map<String,User>> datas = new ArrayList<>();
     CustomAdapter customAdapter;
-    DatabaseReference userRef;
 
 
     @Override

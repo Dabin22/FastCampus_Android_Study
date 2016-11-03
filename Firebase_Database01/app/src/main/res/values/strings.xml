@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Firebase_Database01</string>
+    <string name="store_name">닭집 이름</string>
+</resources>
