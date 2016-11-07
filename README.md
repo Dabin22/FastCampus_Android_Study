@@ -175,3 +175,34 @@
 
 ## 55. SensorBasic 2016.11.01
  > 모바일에서 센서를 사용해본 프로젝트입니다.
+
+## 56. RxAndroidBasic01 2016.11.03
+ > Observerable 생성 후 구독으로 데이터 가져오기
+
+## 57. RxAndroidBasic02 2016.11.03
+ > Observerable의 just, from, defer를 사용해본 프로젝트입니다.
+
+## 58. RxAndroidBasic03 2016.11.03
+ > defer를 사용할때 발행자 Thread를 지정해서 사용해본 프로젝트입니다.
+
+## 59. RxAndroidBasic04 2016.11.04
+ > Observerable 의 map, flatMap, zip을 사용해보고 람다식 표현을 해보았습니다.
+
+## 60. RxAndroidBasic05 2016.11.04
+ > Observerable 의 filter, forEach, first, 
+   last, distinct, take, groupby를 사용해보았습니다.
+
+## 61. RxAndroidBasic06 2016.11.04
+ > PublishSubject, BehaviorSubject, ReplaySubject, AsyncSubject
+   를 사용해본 프로젝트입니다.
+
+## 62. RxAndroidBasic07 2016.11.04 
+ > Rx view Binding and Observerable merge, 
+   RxTextView.textChangeEvents 사용해본 프로젝트입니다.
+
+## 63. RxAndroidBasic08 2016.11.04
+ > Observable.combineLatest을 활용하여 로그인 창의 아이디와 비밀번호
+   를 입력시 로그인 버튼이 활성화 되는 프로젝트입니다.
+
+## 64. RxAndroidBasic09 2016.11.04
+ > RxAndroid와 Retrofit을 같이 활용해서 날씨 정보를 가져오는 프로젝트입니다.
