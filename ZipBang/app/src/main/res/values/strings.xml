@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">ZipBang</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="findInMap">지도에서 찾기</string>
+    <string name="register">방 등록하기</string>
+    <string name="room_name">방 제목</string>
+    <string name="meme">매매</string>
+    <string name="junse">전세</string>
+    <string name="wallse">월세</string>
+    <string name="trust_fee">보증금</string>
+    <string name="room_count">방 갯수</string>
+    <string name="room_size">평 수</string>
+    <string name="post">등록 하기</string>
+    <string name="camera">사진 찍기</string>
+    <string name="gallery">앨범에서 찾기</string>
+    <string name="search">주소 검색</string>
+    <string name="address">주소 :</string>
+
+    <string name="intro_message">장소 찾기</string>
+    <string name="selected_place">최근에 선택된 장소:</string>
+    <string name="place_details">
+    <![CDATA[
+        <b>%1$s</b>
+        <br/>
+        <i>Place Id: %2$s</i>
+        <br/>
+        Address: %3$s
+        <br/>
+        Phone: %4$s
+        <br/>
+        Website: %5$s
+    ]]>
+    </string>
+
+</resources>

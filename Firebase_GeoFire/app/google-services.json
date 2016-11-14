@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "929770604382",
+    "firebase_url": "https://zipbang-495ff.firebaseio.com",
+    "project_id": "zipbang-495ff",
+    "storage_bucket": "zipbang-495ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929770604382:android:90925b161e5454d7",
+        "android_client_info": {
+          "package_name": "com.campus.dabin.zipbang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "929770604382-2ge8v50o3t9svg3vq7ghpi6pqclq82hv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkk5N58YA62xEqTDERhxOqvuaYPG6IkFU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929770604382:android:d79d521181037e06",
+        "android_client_info": {
+          "package_name": "com.campus.dabin.firebase_geofire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "929770604382-2ge8v50o3t9svg3vq7ghpi6pqclq82hv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkk5N58YA62xEqTDERhxOqvuaYPG6IkFU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

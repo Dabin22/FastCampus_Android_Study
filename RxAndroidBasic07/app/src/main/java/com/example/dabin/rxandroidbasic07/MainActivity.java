@@ -1,7 +1,7 @@
 package com.example.dabin.rxandroidbasic07;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,8 +13,6 @@ import java.util.Random;
 
 import rx.Observable;
 
-import static com.jakewharton.rxbinding.view.RxView.clicks;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -23,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Rx view Binding
-        clicks(findViewById(R.id.btn_bind))
+        RxView.clicks(findViewById(R.id.btn_bind))
                 .map(event -> new Random().nextInt())
                 .subscribe(rand -> ((TextView)findViewById(R.id.textView)).setText("value " +rand));
 
