@@ -1,218 +1,216 @@
 
 
-ÆÐ½ºÆ® Ä·ÆÛ½º¿¡¼­ ¹è¿î ¾Èµå·ÎÀÌµå ÇÁ·ÎÁ§Æ®µéÀÔ´Ï´Ù.
+íŒ¨ìŠ¤íŠ¸ ìº í¼ìŠ¤ì—ì„œ ë°°ìš´ ì•ˆë“œë¡œì´ë“œ í”„ë¡œì íŠ¸ë“¤ìž…ë‹ˆë‹¤.
 ===============================
 
-# °¢ ÇÁ·ÎÁ§Æ®¿¡ ´ëÇÑ »ó¼¼ ¼³¸íÀº ÇÁ·ÎÁ§Æ® ÆÄÀÏ·Î µé¾î°¡½Ã¸é È®ÀÎ ÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.
+# ê° í”„ë¡œì íŠ¸ì— ëŒ€í•œ ìƒì„¸ ì„¤ëª…ì€ í”„ë¡œì íŠ¸ íŒŒì¼ë¡œ ë“¤ì–´ê°€ì‹œë©´ í™•ì¸ í•˜ì‹¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
-# °³ ¿ä
+# ê°œ ìš”
 
 ## 1. AppSettings 2016.09.19
- > Ã¹ ¾Èµå·ÎÀÌµå ¼ö¾÷ ÇÁ·ÎÁ§Æ®·Î Ã¹ ½ÇÇàÀ» ÇØº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ì²« ì•ˆë“œë¡œì´ë“œ ìˆ˜ì—… í”„ë¡œì íŠ¸ë¡œ ì²« ì‹¤í–‰ì„ í•´ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 2. ActivityBasic01 2016.09.20
- > ¾×Æ¼ºñÆ¼ ¶óÀÌÇÁ »çÀÌÅ¬¿¡ ´ëÇØ¼­ ¹è¿ì¸é¼­ ÇÑ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ì•¡í‹°ë¹„í‹° ë¼ì´í”„ ì‚¬ì´í´ì— ëŒ€í•´ì„œ ë°°ìš°ë©´ì„œ í•œ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 3. MaterialDesign_Elevation 2016.09.21
- > MeterialDesign¿¡ ´ëÇØ ¹è¿ì°í Elevation¿¡ ´ëÇÏ¿© ½Ç½ÀÇÑ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.  
+ > MeterialDesignì— ëŒ€í•´ ë°°ìš°ê³  Elevationì— ëŒ€í•˜ì—¬ ì‹¤ìŠµí•œ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.  
 
 ## 4. MeterialDesign_ViewAnimaition01 2016.09.21
- > xml¿¡ Á¤ÀÇµÈ ¾Ö´Ï¸ÅÀÌ¼ÇÀ» ºÒ·¯¿À´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > xmlì— ì •ì˜ëœ ì• ë‹ˆë§¤ì´ì…˜ì„ ë¶ˆëŸ¬ì˜¤ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 5. MeterialDesign_PropertyAnimation01 2016.09.21
- > ObjectAnimator¸¦ »ç¿ëÇØ ¾Ö´Ï¸ÅÀÌ¼ÇÈ¿°ú¸¦ ÁÖ´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ObjectAnimatorë¥¼ ì‚¬ìš©í•´ ì• ë‹ˆë§¤ì´ì…˜íš¨ê³¼ë¥¼ ì£¼ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 6. MaterialDesign_PropertyAnimation_SpreadCube 2016.09.21
- > ¾Ö´Ï¸ÅÀÌ¼Ç È¿°ú ÁÖ´Â °Í¿¡ ´ëÇÏ¿© Á» ´õ ½Ç½ÀÇØº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ì• ë‹ˆë§¤ì´ì…˜ íš¨ê³¼ ì£¼ëŠ” ê²ƒì— ëŒ€í•˜ì—¬ ì¢€ ë” ì‹¤ìŠµí•´ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 7. Calculation -small project
- > ¾Ö´Ï¸ÞÀÌ¼Ç È¿°ú¸¦ °¡Áø °è»ê±â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ì• ë‹ˆë©”ì´ì…˜ íš¨ê³¼ë¥¼ ê°€ì§„ ê³„ì‚°ê¸° í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 8. ActivityBasic02 2016.09.22
- > ÀÎÅÙÆ®¿¡ Á¤º¸¸¦ ³Ö¾î¼­ ¾×Æ¼ºñÆ¼°£ÀÇ Åë½ÅÀ» ÇÏ´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ì¸í…íŠ¸ì— ì •ë³´ë¥¼ ë„£ì–´ì„œ ì•¡í‹°ë¹„í‹°ê°„ì˜ í†µì‹ ì„ í•˜ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 9. ServiceBasic01 2016.09.23
- >  Service¿Í IntentService¿¡ ´ëÇÑ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ >  Serviceì™€ IntentServiceì— ëŒ€í•œ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 10~11.  BroadcastSender~BroadcastReciever01  2016.09.23
- > Sender ÇÁ·ÎÁ§Æ®¿¡¼­ Broadcast·Î ÀÎÅÙÆ®¸¦ »Ñ¸®¸é Reciever01 ÇÁ·ÎÁ§Æ®¿¡¼­ ¹Þ¾Æ¼­ ÀÛµ¿À» ÇÏ´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > Sender í”„ë¡œì íŠ¸ì—ì„œ Broadcastë¡œ ì¸í…íŠ¸ë¥¼ ë¿Œë¦¬ë©´ Reciever01 í”„ë¡œì íŠ¸ì—ì„œ ë°›ì•„ì„œ ìž‘ë™ì„ í•˜ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 12. ServiceRotation 2016.09.23
- > Activity¿Í Serviece¿Í Broadcast reciever°£ÀÇ Åë½ÅÀ¸·Î ¸·´ë±â¸¦ ¿òÁ÷ÀÌ´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > Activityì™€ Servieceì™€ Broadcast recieverê°„ì˜ í†µì‹ ìœ¼ë¡œ ë§‰ëŒ€ê¸°ë¥¼ ì›€ì§ì´ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 13. LayoutBasic01 2016.09.26
- > xml¿¡¼­°¡ ¾Æ´Ñ java code·Î ·¹ÀÌ¾Æ¿ôÀÌ³ª À§Á¬À» »ý¼ºÇÏ¿© È­¸éÀ» ±¸¼ºÇØº» ÇÁ·ÎÁ§Æ® ÀÔ´Ï´Ù.
+ > xmlì—ì„œê°€ ì•„ë‹Œ java codeë¡œ ë ˆì´ì•„ì›ƒì´ë‚˜ ìœ„ì ¯ì„ ìƒì„±í•˜ì—¬ í™”ë©´ì„ êµ¬ì„±í•´ë³¸ í”„ë¡œì íŠ¸ ìž…ë‹ˆë‹¤.
 
 ## 14. LayoutWebView 2016.09.26
- > À¥ºä¸¦ »ç¿ëÇÑ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ì›¹ë·°ë¥¼ ì‚¬ìš©í•œ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 15. BasicWidget 2016.09.27
- > º£ÀÌÁ÷ À§Á¬À» ´Ù »ç¿ëÇØº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ë² ì´ì§ ìœ„ì ¯ì„ ë‹¤ ì‚¬ìš©í•´ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 16. BasicList 2016.09.28
- > ±âº» ¸®½ºÆ®ºä¸¦ »ç¿ëÇØº¸°í RecyclerView¿Í CardView±îÁö »ç¿ëÇØº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ê¸°ë³¸ ë¦¬ìŠ¤íŠ¸ë·°ë¥¼ ì‚¬ìš©í•´ë³´ê³  RecyclerViewì™€ CardViewê¹Œì§€ ì‚¬ìš©í•´ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 17. NotePad - smallproject
- > ¸®½ºÆ®ºä¸¦ È°¿ëÇÏ¿© ¸Þ¸ðÀåÀ» ¸¸µé¾ú½À´Ï´Ù. DBÃß°¡ÇÏ¿´½À´Ï´Ù.
+ > ë¦¬ìŠ¤íŠ¸ë·°ë¥¼ í™œìš©í•˜ì—¬ ë©”ëª¨ìž¥ì„ ë§Œë“¤ì—ˆìŠµë‹ˆë‹¤. DBì¶”ê°€í•˜ì˜€ìŠµë‹ˆë‹¤.
 
 ## 18. VersionControl  2016.10.04
- > °¢ ÇÚµåÆù ¹öÀüº° ºÐ±âÃ³¸®¿¡ °üÇÑ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ê° í•¸ë“œí° ë²„ì „ë³„ ë¶„ê¸°ì²˜ë¦¬ì— ê´€í•œ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 19. PermissionRunTime 2016.10.04
- > ¸¶½¬¸á·Î¿ì ¹öÀüºÎÅÍ RunTime¿¡ °ü·ÃµÈ ±ÇÇÑÀº ¸Þ´ÏÆä½ºÆ® ±ÇÇÑµî·ÏÀÌ¿Ü¿¡µµ ±ÇÇÑ Ã¼Å©¸¦ ÇØ¾ßµÇ´Â µ¥ ÀÌ¸¦ ½Ç½ÀÇØº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ë§ˆì‰¬ë©œë¡œìš° ë²„ì „ë¶€í„° RunTimeì— ê´€ë ¨ëœ ê¶Œí•œì€ ë©”ë‹ˆíŽ˜ìŠ¤íŠ¸ ê¶Œí•œë“±ë¡ì´ì™¸ì—ë„ ê¶Œí•œ ì²´í¬ë¥¼ í•´ì•¼ë˜ëŠ” ë° ì´ë¥¼ ì‹¤ìŠµí•´ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 20. MediaLibrary 2016.10.04
- > ÆÄÀÏÀÐ±â ±ÇÇÑÀ» È°¿ëÇÏ¿© MP3ÀÇ ³ë·¡Á¦¸ñ°ú °¡¼ö ¾Ù¹üÀÌ¹ÌÁö¸¦ º¸¿©ÁÖ´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > íŒŒì¼ì½ê¸° ê¶Œí•œì„ í™œìš©í•˜ì—¬ MP3ì˜ ë…¸ëž˜ì œëª©ê³¼ ê°€ìˆ˜ ì•¨ë²”ì´ë¯¸ì§€ë¥¼ ë³´ì—¬ì£¼ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 21. MediaLibrayr_contacts 2016.10.05
- > ¿¬¶ôÃ³¿Í ÀÌ¸§À» °¡Á®¿Í ¸®½ºÆ®ºä·Î º¸¿©ÁÖ´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ì—°ë½ì²˜ì™€ ì´ë¦„ì„ ê°€ì ¸ì™€ ë¦¬ìŠ¤íŠ¸ë·°ë¡œ ë³´ì—¬ì£¼ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 22. FragmentBasic01 2016.10.05
- > fragment ±âº» È¯¸é ÀüÈ¯¿¡ °üÇÑ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.(¸ÞÀÎ xml¿¡ fragmentÀ§Á¬ È°¿ë)
+ > fragment ê¸°ë³¸ í™˜ë©´ ì „í™˜ì— ê´€í•œ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.(ë©”ì¸ xmlì— fragmentìœ„ì ¯ í™œìš©)
 
 ## 23. FragmentBasic02 2016.10.05
- > fragment ±âº» È¯¸é ÀüÈ¯¿¡ °üÇÑ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.(¸ÞÀÎ xml¿¡ framelayout¸¸ »ç¿ë) 
+ > fragment ê¸°ë³¸ í™˜ë©´ ì „í™˜ì— ê´€í•œ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.(ë©”ì¸ xmlì— framelayoutë§Œ ì‚¬ìš©) 
 
 ## 24. FragmentBasic_Gallery 2016.10.06
- > ¸®½ºÆ®ºä¿Í °¢ ¾ÆÀÌÅÛÀÇ µðÅ×ÀÏÀ» ÇÁ·¡±×¸ÕÆ®·Î ±¸¼ºÇÑ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ë¦¬ìŠ¤íŠ¸ë·°ì™€ ê° ì•„ì´í…œì˜ ë””í…Œì¼ì„ í”„ëž˜ê·¸ë¨¼íŠ¸ë¡œ êµ¬ì„±í•œ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 25. FragmentBasic_Pager 2016.10.06
- > ViewPager¸¦ È°¿ëÇÑ ¸®½ºÆ®ºä¿Í µðÅ×ÀÏºä È­¸é ±¸¼º ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ViewPagerë¥¼ í™œìš©í•œ ë¦¬ìŠ¤íŠ¸ë·°ì™€ ë””í…Œì¼ë·° í™”ë©´ êµ¬ì„± í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 26. FragmentBasicTabLayoutViewPage 2016.10.06
- > Tablayout°ú ViewPager¸¦ È°¿ëÇÑ È­¸é±¸¼º ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > Tablayoutê³¼ ViewPagerë¥¼ í™œìš©í•œ í™”ë©´êµ¬ì„± í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 27. MediaLibrary_landList 2016.10.07
- > Fragment¸¦ µÑ·Î ³ª´©°í ÇÑÂÊ¿¡ ViewPager¸¦ Àû¿ëÇÑ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > Fragmentë¥¼ ë‘˜ë¡œ ë‚˜ëˆ„ê³  í•œìª½ì— ViewPagerë¥¼ ì ìš©í•œ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 28. SqliteBasic_sqliteDatabase 2016.10.10
- > SQLite DB¸¦ ¿­°í ÀÔ·Â,¼±ÅÃ,¼öÁ¤,»èÁ¦¸¦ ÇØº¸´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > SQLite DBë¥¼ ì—´ê³  ìž…ë ¥,ì„ íƒ,ìˆ˜ì •,ì‚­ì œë¥¼ í•´ë³´ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 29. SqliteBasic_bbs 2016.10.10
- > SQLite¸¦ ÀÌ¿ëÇÏ¿© °Ô½ÃÆÇÀ» ¸¸µç ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > SQLiteë¥¼ ì´ìš©í•˜ì—¬ ê²Œì‹œíŒì„ ë§Œë“  í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 30. SqliteBasic_DBHelper 2016.10.12
- > DBHelper¸¦ »ç¿ëÇØº¸´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > DBHelperë¥¼ ì‚¬ìš©í•´ë³´ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 31. Sqlite_Memopad 2016.10.13
- > DBHelper¸¦ »ç¿ëÇÏ¿© ¸Þ¸ðÀåÀ» ¸¸µé¾ú½À´Ï´Ù.
+ > DBHelperë¥¼ ì‚¬ìš©í•˜ì—¬ ë©”ëª¨ìž¥ì„ ë§Œë“¤ì—ˆìŠµë‹ˆë‹¤.
 
 ## 32. optimization_render 2016.10.14
- > Thread »ç¿ë°ú traceÆÄÀÏ »ý¼º¿¡ °üÇÑ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > Thread ì‚¬ìš©ê³¼ traceíŒŒì¼ ìƒì„±ì— ê´€í•œ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 33. ViewBasic_Custom 2016.10.14
- > xmlÈ­¸éÀ» ¾×Æ¼ºñÆ¼¿¡¼­ setContentView¿¡ ³ÖÁö¾Ê°í CustomÇÑ È­¸éÀ» ³Ö°í canvas·Î ÅÍÄ¡ÇÑ ºÎºÐ¿¡ ¿øÀÌ »ý¼ºµÇ´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > xmlí™”ë©´ì„ ì•¡í‹°ë¹„í‹°ì—ì„œ setContentViewì— ë„£ì§€ì•Šê³  Customí•œ í™”ë©´ì„ ë„£ê³  canvasë¡œ í„°ì¹˜í•œ ë¶€ë¶„ì— ì›ì´ ìƒì„±ë˜ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 34. ViewBasic_CustomViewWithPath 2016.10.14
- > canvas·Î È­¸é¿¡ µå·¡±×ÇÏ´Â´ë·Î ¼±ÀÌ ±×·ÁÁö´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > canvasë¡œ í™”ë©´ì— ë“œëž˜ê·¸í•˜ëŠ”ëŒ€ë¡œ ì„ ì´ ê·¸ë ¤ì§€ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 35. CustomVuew_MoveReactWithThread 2016.10.14
- > Thread¸¦ È°¿ëÇÏ¿© canvas·Î ±×·ÁÁø ¹°Ã¼¸¦ ¿òÁ÷ÀÌ´Â ÇÁ·ÎÁ§Æ® ÀÔ´Ï´Ù.
+ > Threadë¥¼ í™œìš©í•˜ì—¬ canvasë¡œ ê·¸ë ¤ì§„ ë¬¼ì²´ë¥¼ ì›€ì§ì´ëŠ” í”„ë¡œì íŠ¸ ìž…ë‹ˆë‹¤.
 
 ## 36. CustomView_PushPush small project
- > ¾Õ¿¡ ¹è¿î°ÍÀ» È°¿ëÇÏ¿© °£´ÜÇÑ °ÔÀÓÀ» ¸¸µé¾ú½À´Ï´Ù.
+ > ì•žì— ë°°ìš´ê²ƒì„ í™œìš©í•˜ì—¬ ê°„ë‹¨í•œ ê²Œìž„ì„ ë§Œë“¤ì—ˆìŠµë‹ˆë‹¤.
 
 ## 37. CustomView_RectAI 2016.10.14
- > Á¶ÀÛÀ¸·Î ¿òÁ÷ÀÏ¼ö ÀÖ´Â ÇÃ·¹ÀÌ¾î¸¦ µû¶ó°¡°Ô ÇÏ´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ì¡°ìž‘ìœ¼ë¡œ ì›€ì§ì¼ìˆ˜ ìžˆëŠ” í”Œë ˆì´ì–´ë¥¼ ë”°ë¼ê°€ê²Œ í•˜ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 38. ThreadBasic_Rain 2016.10.17
- > ¾²·¹µå¸¦ È°¿ëÇÏ¿© Äµ¹ö½º¿¡ ¿©·¯°³ÀÇ DrawCircleÀ» ÇØº¸´Â Æ÷·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ì“°ë ˆë“œë¥¼ í™œìš©í•˜ì—¬ ìº”ë²„ìŠ¤ì— ì—¬ëŸ¬ê°œì˜ DrawCircleì„ í•´ë³´ëŠ” í¬ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 39. ThreadBasic_Tetris small project
- > ¾²·¹µå¸¦ È°¿ëÇÏ¿© Å×Æ®¸®½º¸¦ ¸¸µé¾îº¸´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
-   ###1. 2016.10.17~21 ¾÷µ¥ÀÌÆ® -> È­¸é ±¸¼º,ÇÁ¸®ºä,ºí·Ï ³«ÇÏ ÈÄ ¸Ê¿¡ Ãæµ¹½Ã ¸Ê¿¡ Á¾¼Ó, ºí·Ï ÀÌµ¿ ¹× º¯È¯ ±â´É
-   ###2. 2016.10.24 ¾÷µ¥ÀÌÆ® ->²ËÃ¤¿ì¸é ÁÙ»ç¶óÁö°í À§ÀÇ ÁÙÀÌ ³»·Á¿À°í Á¡¼ö´Â ³ª¿É´Ï´Ù. Á×Áö¸¦ ¾Ê½À´Ï´Ù.
-   ###3. 2016.10.25 -> ¿£µå¹öÆ°ÀÌ³ª ¾Û Á¾·á½Ã ºí·Ï ¾²·¹µåµµ °°ÀÌ Á¾·áµÇ°Ô ÇÏ¿´½À´Ï´Ù. ÇöÀç ¾ÛÀÌ ÀÏ½Ã ÁßÁö½Ã ºí·ÏÀÌ ¸ØÃß¾ú´Ù°¡ ¾ÛÀÌ Àç½ÃÀÛ½Ã ´Ù½Ã ºí·ÏÀÌ ³»·Á°¡±â ½ÃÀÛÇÏ´Â ±â´É ±¸ÇöÁß...
+ > ì“°ë ˆë“œë¥¼ í™œìš©í•˜ì—¬ í…ŒíŠ¸ë¦¬ìŠ¤ë¥¼ ë§Œë“¤ì–´ë³´ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 40. ThreadBasic_Handler 2016.10.18
- > ¾²·¹µå¿¡¼­ À¯¾ÆÀÌ¸¦ °Çµé±âÀ§ÇØ ÇÚµé·¯ »ç¿ë ±×¸®°í ¾²·¹µå¾È¿¡ ÇÚµé·¯¸¦ ¸¸µé¾î¼­ »ç¿ëÇÏ±âÀ§ÇØ ·çÆÛ¸¦ »ç¿ë ÇØºÃ°í
-  ±×¸®°í ·çÆÛÀÇ ±â´ÉÀÌ Æ÷ÇÔµÈ ÇÚµé·¯¾²·¹µå¸¦ »ç¿ëÇØ º» ÇÁ·ÎÁ§Æ® ÀÔ´Ï´Ù.
+ > ì“°ë ˆë“œì—ì„œ ìœ ì•„ì´ë¥¼ ê±´ë“¤ê¸°ìœ„í•´ í•¸ë“¤ëŸ¬ ì‚¬ìš© ê·¸ë¦¬ê³  ì“°ë ˆë“œì•ˆì— í•¸ë“¤ëŸ¬ë¥¼ ë§Œë“¤ì–´ì„œ ì‚¬ìš©í•˜ê¸°ìœ„í•´ ë£¨í¼ë¥¼ ì‚¬ìš© í•´ë´¤ê³ 
+  ê·¸ë¦¬ê³  ë£¨í¼ì˜ ê¸°ëŠ¥ì´ í¬í•¨ëœ í•¸ë“¤ëŸ¬ì“°ë ˆë“œë¥¼ ì‚¬ìš©í•´ ë³¸ í”„ë¡œì íŠ¸ ìž…ë‹ˆë‹¤.
 
 ## 41. ThreadBasic_AsyncTask 2016.10.18
- > À§ÀÇ ÇÁ·ÎÁ§Æ®¿¡¼­ progressDialog¸¦ dismiss()¿Í quit()°¡ ½Ã°£ÀÌ ¼­·Î ¸ÂÁö¾Ê¾Æ ¾ÛÀÌ Á×¾î¹ö·Á È­¸éÀÌ ¸ØÃß´Â ¹®Á¦°¡ ¹ß»ýÇÏ¿´´Ù.
-  ±× ¹®Á¦¸¦ ÇØ°áÇÏ±â À§ÇØ AsyncTask¸¦ »ç¿ëÇØº¸´Â ¿¹Á¦ÀÔ´Ï´Ù.
+ > ìœ„ì˜ í”„ë¡œì íŠ¸ì—ì„œ progressDialogë¥¼ dismiss()ì™€ quit()ê°€ ì‹œê°„ì´ ì„œë¡œ ë§žì§€ì•Šì•„ ì•±ì´ ì£½ì–´ë²„ë ¤ í™”ë©´ì´ ë©ˆì¶”ëŠ” ë¬¸ì œê°€ ë°œìƒí•˜ì˜€ë‹¤.
+  ê·¸ ë¬¸ì œë¥¼ í•´ê²°í•˜ê¸° ìœ„í•´ AsyncTaskë¥¼ ì‚¬ìš©í•´ë³´ëŠ” ì˜ˆì œìž…ë‹ˆë‹¤.
 
 ## 42. Customize_Component 2016.10.20
- > drawable Æú´õ¿¡ xmlÆÄÀÏÀ» ¸¸µé¾î¼­ ¹öÆ°À» Ä¿½ºÅÒ ¸¶ÀÌÂ¡ ÇØº¸¿Ô°í Textºä¸¦ »ó¼Ó¹Þ¾Æ¼­ Ä¿½ºÅÒ ºä¸¦ ¸¸µé¾î ¿À´Ã 
-   ³¯Â¥¿¡ "-"¸¦ ±¸ºÐÀÚ·Î ÀÔ·Â¹Þ¾Æº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > drawable í´ë”ì— xmlíŒŒì¼ì„ ë§Œë“¤ì–´ì„œ ë²„íŠ¼ì„ ì»¤ìŠ¤í…€ ë§ˆì´ì§• í•´ë³´ì™”ê³  Textë·°ë¥¼ ìƒì†ë°›ì•„ì„œ ì»¤ìŠ¤í…€ ë·°ë¥¼ ë§Œë“¤ì–´ ì˜¤ëŠ˜ 
+   ë‚ ì§œì— "-"ë¥¼ êµ¬ë¶„ìžë¡œ ìž…ë ¥ë°›ì•„ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 43. SurfaceView 2016.10.20
- > surfaceview¸¦ »ç¿ëÇÏ¿©¼­ È­¸éÀ» ±¸¼ºÇØº¸¾Ò°í Á¶±×¸¶ÇÑ ³×¸ð°¡ È­¸éÀ» °¡·ÎÁú·¯ ¿òÁ÷ÀÌ´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > surfaceviewë¥¼ ì‚¬ìš©í•˜ì—¬ì„œ í™”ë©´ì„ êµ¬ì„±í•´ë³´ì•˜ê³  ì¡°ê·¸ë§ˆí•œ ë„¤ëª¨ê°€ í™”ë©´ì„ ê°€ë¡œì§ˆëŸ¬ ì›€ì§ì´ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 44. Remote_HttpURLConnection 2016.10.21
- > httpurlconnectionÀ» »ç¿ëÇÏ¿© ¼­¿ï½Ã API¿Í Åë½ÅÇØº¸¸ç JSON¿¡¼­ ÇÊ¿äÇÑ Á¤º¸¸¸ °¡Á®¿À´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > httpurlconnectionì„ ì‚¬ìš©í•˜ì—¬ ì„œìš¸ì‹œ APIì™€ í†µì‹ í•´ë³´ë©° JSONì—ì„œ í•„ìš”í•œ ì •ë³´ë§Œ ê°€ì ¸ì˜¤ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 45. Remote_Rest 2016.10.24
- > ³ëÆ®ºÏ¿¡ apache tomcatÀ¸·Î ¼­¹ö¸¦ ¶ç¿ì°í ¹öÆ° Å¬¸¯À¸·Î ¹Þ¾Æ¿À´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù. Rest¿¡ ´ëÇØ¼­ ¹è¿ü½À´Ï´Ù.
+ > ë…¸íŠ¸ë¶ì— apache tomcatìœ¼ë¡œ ì„œë²„ë¥¼ ë„ìš°ê³  ë²„íŠ¼ í´ë¦­ìœ¼ë¡œ ë°›ì•„ì˜¤ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤. Restì— ëŒ€í•´ì„œ ë°°ì› ìŠµë‹ˆë‹¤.
 
 ## 46. Remote_HttpURLConnection_Cookie 2016.10.25
- > ³ëÆ®ºÏ¿¡ ¼­¹ö¸¦ ¶ç¿ì°í ±×°÷¿¡ Æ÷½ºÆ®·Î °ªÀ» ³Ñ±â°í ÄíÅ°¿¡ ÀúÀåÇØ³õÀº°ÍÀ»
-   ÄíÅ° ¸Å´ÏÀú¸¦ ÅëÇØ¼­ °ªÀ» Á¤Á¦ÇÏ°í SharedPreferences·Î ÀúÀåÀ» ÇØ¼­ ¾ÛÁ¾·á ÈÄ ´Ù½ÃÄÑµµ ±× °ªÀÌ ÀúÀåµÇ¾îÀÖÀ½À» 
-   º¸¿©ÁÖ´Â ¾ÛÀÔ´Ï´Ù. 
+ > ë…¸íŠ¸ë¶ì— ì„œë²„ë¥¼ ë„ìš°ê³  ê·¸ê³³ì— í¬ìŠ¤íŠ¸ë¡œ ê°’ì„ ë„˜ê¸°ê³  ì¿ í‚¤ì— ì €ìž¥í•´ë†“ì€ê²ƒì„
+   ì¿ í‚¤ ë§¤ë‹ˆì €ë¥¼ í†µí•´ì„œ ê°’ì„ ì •ì œí•˜ê³  SharedPreferencesë¡œ ì €ìž¥ì„ í•´ì„œ ì•±ì¢…ë£Œ í›„ ë‹¤ì‹œì¼œë„ ê·¸ ê°’ì´ ì €ìž¥ë˜ì–´ìžˆìŒì„ 
+   ë³´ì—¬ì£¼ëŠ” ì•±ìž…ë‹ˆë‹¤. 
+   
 ## 47. Remote_Retrofit 2016.10.26
- > Retrofit°ú gsonÀ» ÀÌ¿ëÇØ¼­ open api¿¡¼­ º¸³»´Â jsonÀ» È¿À²ÀûÀ¸·Î ºÐ·ù ÇØ³»´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > Retrofitê³¼ gsonì„ ì´ìš©í•´ì„œ open apiì—ì„œ ë³´ë‚´ëŠ” jsonì„ íš¨ìœ¨ì ìœ¼ë¡œ ë¶„ë¥˜ í•´ë‚´ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 48. Remote_OKHttp 2016.10.26
- > OKHttp¸¦ ÅëÇØ¼­ Åë½ÅÇØº¸´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > OKHttpë¥¼ í†µí•´ì„œ í†µì‹ í•´ë³´ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 49. Remote_RetrofitWithOKHttp 2016.10.26
- > Retrofit¿¡ client·Î OKHttp¸¦ ÀÌ¿ëÇÔÀ¸·Î½á ÀÎÁõ¼­ ¹®Á¦³ª ÄíÅ°¸Å´ÏÀúµîÀ» »ç¿ëÇÒ ¼ö ÀÖ´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > Retrofitì— clientë¡œ OKHttpë¥¼ ì´ìš©í•¨ìœ¼ë¡œì¨ ì¸ì¦ì„œ ë¬¸ì œë‚˜ ì¿ í‚¤ë§¤ë‹ˆì €ë“±ì„ ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 50. LoadingLibrary 2016.10.26 
- > ÀÌ¹ÌÁöÆÄÀÏ µî ·Îµù¹®Á¦¸¦ °£ÆíÇÏ°í ºü¸£°Ô ÇØ°áÇÏ±âÀ§ÇÑ ¶óÀÌºê·¯¸®ÀÎ glide¿Í picasso¸¦ ½áº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ì´ë¯¸ì§€íŒŒì¼ ë“± ë¡œë”©ë¬¸ì œë¥¼ ê°„íŽ¸í•˜ê³  ë¹ ë¥´ê²Œ í•´ê²°í•˜ê¸°ìœ„í•œ ë¼ì´ë¸ŒëŸ¬ë¦¬ì¸ glideì™€ picassoë¥¼ ì¨ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 51. ButterKnife 2016.10.27
- > ButterKnife¸¦ ½áº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ButterKnifeë¥¼ ì¨ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 52. AnnotaitonTest 2016.10.27
- > annotationÀ» È°¿ëÇØ¼­ ButterKnife ÀÏºÎ¸¦ ±¸ÇöÇØ º¸¾Ò½À´Ï´Ù.
+ > annotationì„ í™œìš©í•´ì„œ ButterKnife ì¼ë¶€ë¥¼ êµ¬í˜„í•´ ë³´ì•˜ìŠµë‹ˆë‹¤.
 
 ## 53. Firebase_Database 2016.10.27
- > ±¸±ÛÀÇ ÆÄÀÌ¾îº£ÀÌ½ºÀÇ ½Ç½Ã°£ µ¥ÀÌÅÍº£ÀÌ½º¸¦ ½áº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > êµ¬ê¸€ì˜ íŒŒì´ì–´ë² ì´ìŠ¤ì˜ ì‹¤ì‹œê°„ ë°ì´í„°ë² ì´ìŠ¤ë¥¼ ì¨ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 54. Firebase_Database 2016.11.01
- > ±¸±Û ÆÄÀÌ¾îº£ÀÌ½º¸¦ ÀÀ¿ëÇÑ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > êµ¬ê¸€ íŒŒì´ì–´ë² ì´ìŠ¤ë¥¼ ì‘ìš©í•œ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 55. SensorBasic 2016.11.01
- > ¸ð¹ÙÀÏ¿¡¼­ ¼¾¼­¸¦ »ç¿ëÇØº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > ëª¨ë°”ì¼ì—ì„œ ì„¼ì„œë¥¼ ì‚¬ìš©í•´ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 56. RxAndroidBasic01 2016.11.03
- > Observerable »ý¼º ÈÄ ±¸µ¶À¸·Î µ¥ÀÌÅÍ °¡Á®¿À±â
+ > Observerable ìƒì„± í›„ êµ¬ë…ìœ¼ë¡œ ë°ì´í„° ê°€ì ¸ì˜¤ê¸°
 
 ## 57. RxAndroidBasic02 2016.11.03
- > ObserverableÀÇ just, from, defer¸¦ »ç¿ëÇØº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > Observerableì˜ just, from, deferë¥¼ ì‚¬ìš©í•´ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 58. RxAndroidBasic03 2016.11.03
- > defer¸¦ »ç¿ëÇÒ¶§ ¹ßÇàÀÚ Thread¸¦ ÁöÁ¤ÇØ¼­ »ç¿ëÇØº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > deferë¥¼ ì‚¬ìš©í• ë•Œ ë°œí–‰ìž Threadë¥¼ ì§€ì •í•´ì„œ ì‚¬ìš©í•´ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 59. RxAndroidBasic04 2016.11.04
- > Observerable ÀÇ map, flatMap, zipÀ» »ç¿ëÇØº¸°í ¶÷´Ù½Ä Ç¥ÇöÀ» ÇØº¸¾Ò½À´Ï´Ù.
+ > Observerable ì˜ map, flatMap, zipì„ ì‚¬ìš©í•´ë³´ê³  ëžŒë‹¤ì‹ í‘œí˜„ì„ í•´ë³´ì•˜ìŠµë‹ˆë‹¤.
 
 ## 60. RxAndroidBasic05 2016.11.04
- > Observerable ÀÇ filter, forEach, first, 
-   last, distinct, take, groupby¸¦ »ç¿ëÇØº¸¾Ò½À´Ï´Ù.
+ > Observerable ì˜ filter, forEach, first, 
+   last, distinct, take, groupbyë¥¼ ì‚¬ìš©í•´ë³´ì•˜ìŠµë‹ˆë‹¤.
 
 ## 61. RxAndroidBasic06 2016.11.04
  > PublishSubject, BehaviorSubject, ReplaySubject, AsyncSubject
-   ¸¦ »ç¿ëÇØº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+   ë¥¼ ì‚¬ìš©í•´ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 62. RxAndroidBasic07 2016.11.04 
  > Rx view Binding and Observerable merge, 
-   RxTextView.textChangeEvents »ç¿ëÇØº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+   RxTextView.textChangeEvents ì‚¬ìš©í•´ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 63. RxAndroidBasic08 2016.11.04
- > Observable.combineLatestÀ» È°¿ëÇÏ¿© ·Î±×ÀÎ Ã¢ÀÇ ¾ÆÀÌµð¿Í ºñ¹Ð¹øÈ£
-   ¸¦ ÀÔ·Â½Ã ·Î±×ÀÎ ¹öÆ°ÀÌ È°¼ºÈ­ µÇ´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > Observable.combineLatestì„ í™œìš©í•˜ì—¬ ë¡œê·¸ì¸ ì°½ì˜ ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸
+   ë¥¼ ìž…ë ¥ì‹œ ë¡œê·¸ì¸ ë²„íŠ¼ì´ í™œì„±í™” ë˜ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 64. RxAndroidBasic09 2016.11.04
- > RxAndroid¿Í RetrofitÀ» °°ÀÌ È°¿ëÇØ¼­ ³¯¾¾ Á¤º¸¸¦ °¡Á®¿À´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > RxAndroidì™€ Retrofitì„ ê°™ì´ í™œìš©í•´ì„œ ë‚ ì”¨ ì •ë³´ë¥¼ ê°€ì ¸ì˜¤ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 65. ZIPBANG 2016.11.08
- > Á÷¹æ¿¡ ±â´É µû¶óÇØº¸´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù. ÇöÀç ¹æÀ» Ãß°¡ÇÏ´Â ±â´ÉÀ» ±¸ÇöÁßÀÔ´Ï´Ù.
-   ±× ÀÌÈÄ¿¡ ¸Ê¿¡¼­ º¸ÀÌ´Â ±â´É Áö¿ªº°·Î ¸®½ºÆ®·Î º¸´Â ±â´É µîÀ» Ãß°¡ÇÒ °èÈ¹ÀÔ´Ï´Ù.
+ > ì§ë°©ì— ê¸°ëŠ¥ ë”°ë¼í•´ë³´ëŠ” í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤. í˜„ìž¬ ë°©ì„ ì¶”ê°€í•˜ëŠ” ê¸°ëŠ¥ì„ êµ¬í˜„ì¤‘ìž…ë‹ˆë‹¤.
+   ê·¸ ì´í›„ì— ë§µì—ì„œ ë³´ì´ëŠ” ê¸°ëŠ¥ ì§€ì—­ë³„ë¡œ ë¦¬ìŠ¤íŠ¸ë¡œ ë³´ëŠ” ê¸°ëŠ¥ ë“±ì„ ì¶”ê°€í•  ê³„íšìž…ë‹ˆë‹¤.
 
 ## 66. Firebase_GeoFire 2016.11.11
- > ÆÄÀÌ¾îº£ÀÌ½º¿¡ GeoFire ±â´ÉÀ» »ç¿ëÇØº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.
+ > íŒŒì´ì–´ë² ì´ìŠ¤ì— GeoFire ê¸°ëŠ¥ì„ ì‚¬ìš©í•´ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤.
 
 ## 67. GoogleMap_Clustering 2016.11.11
- > Google map¿¡¼­ ¸¶Ä¿°¡ ÀÚµ¿À¸·Î ¸ðÀÌ´Â Clustering¿¡ ´ëÇØ¼­ »ç¿ëÇØº» ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù. 
+ > Google mapì—ì„œ ë§ˆì»¤ê°€ ìžë™ìœ¼ë¡œ ëª¨ì´ëŠ” Clusteringì— ëŒ€í•´ì„œ ì‚¬ìš©í•´ë³¸ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤. 
